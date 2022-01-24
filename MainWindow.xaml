@@ -1,0 +1,357 @@
+﻿<Window x:Class="MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kaspersky_Internet_Security"
+        mc:Ignorable="d"
+        Title="Kaspersky Internet Security" Height="560" Width="770" Icon="/logo.png" SizeToContent="Width" WindowStyle="SingleBorderWindow" MinHeight="560" FontFamily="Arial" BorderBrush="White" MaxHeight="560" MaxWidth="770" MinWidth="770">
+    <Grid>
+        <RichTextBox Margin="0,0,0,484" TextChanged="RichTextBox_TextChanged_2" BorderBrush="White" MinHeight="55" MaxHeight="55">
+            <FlowDocument>
+                <Paragraph>
+                    <TextBlock  Text="Инструменты" Foreground="Black"  TextDecorations="{x:Null}"  Width="177" Margin="18,15,0,0"  FontWeight="Bold" TextAlignment="Center" FlowDirection="LeftToRight" Cursor="Hand" Padding="40,0,9,0" HorizontalAlignment="Left" FontSize="18" >
+                        <TextBlock.Background>
+                            <ImageBrush ImageSource="/back.png" Stretch="None" TileMode="None" ViewboxUnits="RelativeToBoundingBox" ViewportUnits="RelativeToBoundingBox" AlignmentX="Left" />
+                        </TextBlock.Background>
+                    </TextBlock>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <TabControl Background="White" TabStripPlacement="Left"  BorderBrush="White" Margin="0,60,0,45">
+            <TabControl.Resources>
+
+                <Style TargetType="TabItem">
+                    <Setter Property="HorizontalAlignment" Value="Left" />
+                    <Setter Property="Template">
+
+                        <Setter.Value>
+                            <ControlTemplate TargetType="TabItem">
+                                <Border Name="Border" BorderThickness="4,0,0,0" >
+                                    <ContentPresenter x:Name="ContentSite"
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Left"
+                                        ContentSource="Header"
+                                        Margin="10,2"/>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter TargetName="Border" Property="Background" Value="#A7EDDF"  />
+                                        <Setter TargetName="Border" Property="BorderBrush" Value="#FF1E856F"  />
+                                    </Trigger>
+                                    <Trigger Property="IsSelected" Value="False">
+                                        <Setter TargetName="Border" Property="Background" Value="GhostWhite" />
+                                        <Setter TargetName="Border" Property="BorderBrush" Value="GhostWhite"  />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </TabControl.Resources>
+
+            <TabItem Header="Защита" FontWeight="Bold" Width="210" Height="48" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" FontSize="14">
+
+                <TextBlock TextWrapping="Wrap" TextAlignment="Left" MinWidth="554" Width="542" Margin="0,0,0,-4" >
+                    <TextBlock.Background>
+                        <ImageBrush ImageSource="/back_2.png" AlignmentX="Left" AlignmentY="Top" Stretch="Fill" TileMode="None" ViewboxUnits="RelativeToBoundingBox" ViewportUnits="RelativeToBoundingBox">
+                            <ImageBrush.Transform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform X="0"/>
+                                </TransformGroup>
+                            </ImageBrush.Transform>
+                        </ImageBrush>
+                    </TextBlock.Background>
+                    
+                    <InlineUIContainer BaselineAlignment="TextBottom">
+                        <StackPanel> 
+                            <Button Name = "btn" Padding="0,15,0,0" Width="210" HorizontalAlignment="Center" HorizontalContentAlignment="Left" BorderBrush="White" Background="#FFF6F6F6" ScrollViewer.CanContentScroll="True"> 
+                                
+                                <StackPanel Orientation="Horizontal">  
+                                <Image Source="/icon_cloud.png" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                                    <Image.OpacityMask>
+                                        <ImageBrush ImageSource="/icon_cloud.png"/>
+                                    </Image.OpacityMask>
+                                </Image>  
+                                <TextBlock Margin="5,5,5,0"><Run Text="Облачная защита"  Foreground="#FF00A88E" TextDecorations="Underline"/></TextBlock>  
+                                </StackPanel>  
+                            </Button>   
+                            
+                            <TextBlock Text="Доступ к облачной базе данных помогает мгновенно выявить опасность. " Width="300" TextAlignment="Left" FlowDirection="LeftToRight" TextWrapping="Wrap" Padding="85,0,0,0" FontWeight="Normal" FontSize="12" />
+                             
+                            
+                             <Button Name = "btn1" Padding="0,10,0,0" Width="199" HorizontalAlignment="Center" HorizontalContentAlignment="Left" BorderBrush="White" Background="#FFF6F6F6" ScrollViewer.CanContentScroll="True">  
+                                <StackPanel Orientation="Horizontal">  
+                                <Image Source="/icon_quarantine.png" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                                    <Image.OpacityMask>
+                                        <ImageBrush ImageSource="/icon_quarantine.png"/>
+                                    </Image.OpacityMask>
+                                </Image>  
+                                <TextBlock Margin="10,5,5,0"><Run Text="Карантин"  Foreground="#FF00A88E" TextDecorations="Underline"/></TextBlock>  
+                                </StackPanel>  
+                            </Button>
+                            
+                            <TextBlock Text="Хранит файлы, измененные или удалённые во время лечения." Width="300" TextAlignment="Left" FlowDirection="LeftToRight" TextWrapping="Wrap" Padding="85,0,0,0" FontWeight="Normal" FontSize="12" />
+                            
+                            
+                            
+                             <Button Name = "btn2" Padding="0,10,0,0" Width="208" HorizontalAlignment="Center" HorizontalContentAlignment="Left" BorderBrush="White" Background="#FFF6F6F6" ScrollViewer.CanContentScroll="True">  
+                                <StackPanel Orientation="Horizontal" Width="226">  
+                                <Image Source="/icon_keyboard.png" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                                    <Image.OpacityMask>
+                                        <ImageBrush ImageSource="/icon_keyboard.png"/>
+                                    </Image.OpacityMask>
+                                </Image>  
+                                <TextBlock Margin="8,10,5,0"><Run Text="Экранная клавиатура"  Foreground="#FF00A88E" TextDecorations="Underline"/></TextBlock>  
+                                </StackPanel>  
+                            </Button>
+                            
+                            
+                            <TextBlock Text="Защищает данные от перехвата клавиатурными шпионами." Width="300" TextAlignment="Left" FlowDirection="LeftToRight" TextWrapping="Wrap" Padding="85,0,0,0" FontWeight="Normal" FontSize="12" />
+                            
+                            
+                            
+                            <Button Name = "btn3" Padding="0,10,0,0" Width="208" HorizontalAlignment="Center" HorizontalContentAlignment="Left" BorderBrush="White" Background="#FFF6F6F6" ScrollViewer.CanContentScroll="True">  
+                                <StackPanel Orientation="Horizontal" Width="226">  
+                                <Image Source="/icon_disk.png" HorizontalAlignment="Left" VerticalAlignment="Center" Height="25" Margin="4,0,0,0" >
+                                    <Image.OpacityMask>
+                                        <ImageBrush ImageSource="/icon_disk.png" Stretch="None"/>
+                                    </Image.OpacityMask>
+                                </Image>  
+                                <TextBlock Margin="10,5,5,0"><Run Text="Kaspersky Rescue Disc"  Foreground="#FF00A88E" TextDecorations="Underline"/></TextBlock>  
+                                </StackPanel>  
+                            </Button>
+                             
+                            <TextBlock Text="Лечит критически зараженный компьютер в момент загрузки операционной системы." Width="300" TextAlignment="Left" FlowDirection="LeftToRight" TextWrapping="Wrap" Padding="85,0,0,0" FontWeight="Normal" FontSize="12" />
+                        
+                        </StackPanel>
+                        
+                    </InlineUIContainer>
+                    
+                    
+                     
+                    
+                </TextBlock>
+
+            </TabItem>
+
+            <TabItem Header="Моя сеть" FontWeight="Bold" Width="210" Height="48" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" FontSize="14" BorderBrush="White">
+                <TextBlock TextWrapping="Wrap" Text=" " HorizontalAlignment="Left"  VerticalAlignment="Top" Width="554" Height="435">
+
+                    <TextBlock.Background>
+                        <ImageBrush ImageSource="/back_1.png" AlignmentX="Left" AlignmentY="Top" Stretch="Fill" TileMode="None" ViewboxUnits="RelativeToBoundingBox" ViewportUnits="RelativeToBoundingBox">
+                            <ImageBrush.Transform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform X="0"/>
+                                </TransformGroup>
+                            </ImageBrush.Transform>
+                        </ImageBrush>
+                    </TextBlock.Background>
+                    <InlineUIContainer BaselineAlignment="TextBottom">
+                        
+                        <StackPanel>
+                    <Grid Height="77" Width="524" HorizontalAlignment="Left" Margin="35,35,0,0" >
+                        <Grid.Background>
+                            <ImageBrush ImageSource="/icon_lock.png" Stretch="None" TileMode="None" AlignmentX="Left" >
+                                <ImageBrush.RelativeTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                                        <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                                        <RotateTransform CenterX="0.5" CenterY="0.5"/>
+                                        <TranslateTransform X="0"/>
+                                    </TransformGroup>
+                                </ImageBrush.RelativeTransform>
+                            </ImageBrush>
+                        </Grid.Background>
+                         
+                        <StackPanel>
+
+
+                            <TextBlock Text="Безопасное  VPN-соединение" Foreground="#FF00A88E" TextDecorations="Underline" Width="300" TextAlignment="Left" FlowDirection="LeftToRight" TextWrapping="Wrap" Padding="85,0,0,0" HorizontalAlignment="Left" FontWeight="Bold" />
+                            <TextBlock Text="Доступ к облачной базе данных помогает мгновенно выявить опасность. " Width="300" TextAlignment="Left" FlowDirection="LeftToRight" TextWrapping="Wrap" Padding="85,10,0,0" HorizontalAlignment="Left" FontWeight="Normal" />
+
+
+
+
+                        </StackPanel>
+                    </Grid>
+
+                    <Grid Height="77" Width="524" HorizontalAlignment="Left" Margin="35,35,0,0">
+                        <Grid.Background>
+                            <ImageBrush ImageSource="/icon_comp.png" Stretch="None" TileMode="None" AlignmentX="Left"/>
+                        </Grid.Background>
+
+                        <StackPanel>
+
+
+                            <TextBlock Text="Мониторинг сети" Foreground="#FF00A88E" TextDecorations="Underline" Width="300" TextAlignment="Left" FlowDirection="LeftToRight" TextWrapping="Wrap" Padding="85,0,0,0" HorizontalAlignment="Left" FontWeight="Bold" />
+                            <TextBlock Text="Показывает сетевую активность программ." Width="300" TextAlignment="Left" FlowDirection="LeftToRight" TextWrapping="Wrap" Padding="85,10,0,0" HorizontalAlignment="Left" FontWeight="Normal" />
+
+
+
+
+                        </StackPanel>
+                    </Grid>
+
+
+
+
+                </StackPanel>
+                        
+                        
+                    </InlineUIContainer>
+                </TextBlock>
+
+            </TabItem>
+            <TabItem Header="Управление программами" FontWeight="Bold" Width="210" Height="48" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" FontSize="14" BorderBrush="White">
+                <StackPanel>
+                    <Grid Height="77" Width="524" HorizontalAlignment="Left" Margin="35,35,0,0" >
+                        <Grid.Background>
+                            <ImageBrush ImageSource="/icon_lock.png" Stretch="None" TileMode="None" AlignmentX="Left" >
+                                <ImageBrush.RelativeTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                                        <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                                        <RotateTransform CenterX="0.5" CenterY="0.5"/>
+                                        <TranslateTransform X="0"/>
+                                    </TransformGroup>
+                                </ImageBrush.RelativeTransform>
+                            </ImageBrush>
+                        </Grid.Background>
+
+                        <StackPanel>
+                            <TextBlock Text="Безопасное  VPN-соединение" Foreground="#FF23D1AE" TextDecorations="Underline" Width="300" TextAlignment="Left" FlowDirection="LeftToRight" TextWrapping="Wrap" Padding="85,0,0,0" HorizontalAlignment="Left" FontWeight="Bold" />
+                            <TextBlock Text="Доступ к облачной базе данных помогает мгновенно выявить опасность. " Width="300" TextAlignment="Left" FlowDirection="LeftToRight" TextWrapping="Wrap" Padding="85,10,0,0" HorizontalAlignment="Left" />
+
+
+
+
+                        </StackPanel>
+                    </Grid>
+
+                    <Grid Height="77" Width="524" HorizontalAlignment="Left" Margin="35,35,0,0">
+                        <Grid.Background>
+                            <ImageBrush ImageSource="/icon_comp.png" Stretch="None" TileMode="None" AlignmentX="Left"/>
+                        </Grid.Background>
+
+                        <StackPanel>
+
+
+                            <TextBlock Text="Мониторинг сети" Foreground="#FF23D1AE" TextDecorations="Underline" Width="300" TextAlignment="Left" FlowDirection="LeftToRight" TextWrapping="Wrap" Padding="85,0,0,0" HorizontalAlignment="Left" FontWeight="Bold" />
+                            <TextBlock Text="Показывает сетевую активность программ." Width="300" TextAlignment="Left" FlowDirection="LeftToRight" TextWrapping="Wrap" Padding="85,10,0,0" HorizontalAlignment="Left" />
+
+
+
+
+                        </StackPanel>
+                    </Grid>
+
+
+
+
+                </StackPanel>
+
+            </TabItem>
+            <TabItem Header="Очистка и оптимизация" FontWeight="Bold" Width="210" Height="48" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" FontSize="14" BorderBrush="White">
+                <TextBlock TextWrapping="Wrap" Text=" " HorizontalAlignment="Left" InputScope="Url" Foreground="#FF23D1AE" TextDecorations="Underline" FontWeight="Bold" VerticalAlignment="Top" Width="560" Height="445">
+                    <TextBlock.Background>
+                        <ImageBrush ImageSource="/back_2.png" AlignmentX="Left" AlignmentY="Top" Stretch="Uniform" TileMode="None" ViewboxUnits="RelativeToBoundingBox" ViewportUnits="RelativeToBoundingBox">
+                            <ImageBrush.Transform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform X="0"/>
+                                </TransformGroup>
+                            </ImageBrush.Transform>
+                        </ImageBrush>
+                    </TextBlock.Background>
+                </TextBlock>
+
+            </TabItem>
+
+
+
+
+
+
+        </TabControl>
+        <Grid Width="178" HorizontalAlignment="Left" Margin="21,285,0,196" >
+
+            <Grid.Background>
+                <ImageBrush ImageSource="/icon_report.png" Stretch="None" TileMode="None" AlignmentX="Left"/>
+            </Grid.Background>
+
+            <StackPanel Grid.ColumnSpan="2">
+
+
+                <TextBlock Text="Отчеты" Foreground="#FF1F846F" TextDecorations="{x:Null}" Width="171" TextAlignment="Left" FlowDirection="LeftToRight" TextWrapping="Wrap" Padding="45,0,0,0" HorizontalAlignment="Left" FontWeight="Bold" Height="15" Margin="0,10,0,0" VerticalAlignment="Center" />
+
+
+
+            </StackPanel>
+        </Grid>
+        <RichTextBox Margin="0,487,0,0" TextChanged="RichTextBox_TextChanged_1" HorizontalAlignment="Center" BorderBrush="#FFD9DCE5" MinHeight="34" MaxHeight="34" >
+            <FlowDocument>
+                <Paragraph>
+
+                    <InlineUIContainer>
+
+                        <TextBlock Text=" " Foreground="#FF00A88E" Width="15"  FontWeight="Normal" TextAlignment="Right" FlowDirection="LeftToRight" Cursor="Hand" Margin="10,8,0,0" Height="15"   >
+                            <TextBlock.Background>
+                                <ImageBrush ImageSource="/icon_settings.png" Stretch="UniformToFill" ViewboxUnits="RelativeToBoundingBox"/>
+                            </TextBlock.Background>
+                        </TextBlock>
+
+
+                    </InlineUIContainer>
+                    <InlineUIContainer>
+
+                        <TextBlock Text=" " Foreground="#FF00A88E" Width="15"  FontWeight="Bold" TextAlignment="Right" FlowDirection="LeftToRight" Cursor="Hand" Margin="10,8,0,0" Height="15" >
+                            <TextBlock.Background>
+                                <ImageBrush ImageSource="/icon_support.png" Stretch="UniformToFill" ViewboxUnits="RelativeToBoundingBox"/>
+                            </TextBlock.Background>
+                        </TextBlock>
+
+
+                    </InlineUIContainer>
+                    <InlineUIContainer>
+
+                        <TextBlock Text="Другие решения" Foreground="#FF00A88E" Width="398"  FontWeight="Bold" TextAlignment="Right" FlowDirection="LeftToRight" Cursor="Hand" Margin="0,7,0,0" />
+
+
+                    </InlineUIContainer>
+                    <Run Text=" "/>
+                    <InlineUIContainer>
+
+                        <TextBlock Text="My Kaspersky " Foreground="#FF00A88E" Width="88"  FontWeight="Bold" TextAlignment="Right" FlowDirection="LeftToRight" Cursor="Hand" Margin="0,7,0,0" />
+
+
+                    </InlineUIContainer>
+                    <Run Text=" "/>
+                    <InlineUIContainer>
+
+                        <TextBlock Text="Лицензия: 319 дней осталось" Foreground="#FF00A88E" Width="176"  FontWeight="DemiBold" TextAlignment="Right" FlowDirection="LeftToRight" Cursor="Hand" Margin="0,7,0,0" />
+
+
+                    </InlineUIContainer>
+
+                </Paragraph>
+
+            </FlowDocument>
+
+
+        </RichTextBox>
+
+
+
+
+    </Grid>
+
+</Window>

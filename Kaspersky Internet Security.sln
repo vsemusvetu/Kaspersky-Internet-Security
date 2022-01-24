@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Kaspersky Internet Security", "Kaspersky Internet Security.vbproj", "{A58F5037-1BCE-482C-BBEC-4AAEE43FB1EB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A58F5037-1BCE-482C-BBEC-4AAEE43FB1EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A58F5037-1BCE-482C-BBEC-4AAEE43FB1EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A58F5037-1BCE-482C-BBEC-4AAEE43FB1EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A58F5037-1BCE-482C-BBEC-4AAEE43FB1EB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D96C266D-86F8-42DD-9831-2084A2A8E9A9}
+	EndGlobalSection
+EndGlobal
